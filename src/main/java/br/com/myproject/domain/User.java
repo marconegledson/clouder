@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,7 +19,6 @@ import lombok.Setter;
 public class User {
 	
 	@Id
-	@NotNull
 	@Column(name = "id", nullable = false)
 	@SequenceGenerator(sequenceName = "user_sequence", name = "user")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
