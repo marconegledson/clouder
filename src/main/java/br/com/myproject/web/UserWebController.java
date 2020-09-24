@@ -29,17 +29,17 @@ public class UserWebController {
 	
 	@GetMapping("/")
 	public List<User> getAll(){
-		return userService.getAll();
+		return userService.findAll();
 	}
 	
 	@GetMapping("/{id}")
 	public User getOne(@PathVariable(required = true) Long id){
-		return userService.getOne(id);
+		return userService.findOne(id);
 	}
 	
 	@GetMapping("/search")
 	public List<User> getByName(@RequestParam(value = "name") String name){
-		return userService.getByName(name);
+		return userService.findByName(name);
 	}
 	
 	@PostMapping("/")

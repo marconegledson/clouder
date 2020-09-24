@@ -21,11 +21,11 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public User getOne(Long id) {
+	public User findOne(Long id) {
 		return userRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(MessageFormat.format("id {0} not found", id)));
 	}
 	
-	public List<User> getAll(){
+	public List<User> findAll(){
 		return userRepository.findAll();
 	}
 	
@@ -34,7 +34,7 @@ public class UserService {
 	}
 	
 	public User update(Long id, User user) {
-		User entity =  getOne(id);
+		User entity =  findOne(id);
 		BeanUtils.copyProperties(user, entity, "id");
 		return save(entity);
 	}
@@ -47,8 +47,8 @@ public class UserService {
 		userRepository.delete(user);
 	}
 
-	public List<User> getByName(String name) {
-		return userRepository.getByName(name);
+	public List<User> findByName(String name) {
+		return userRepository.findByName(name);
 	}
 
 
