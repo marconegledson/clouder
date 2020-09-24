@@ -13,7 +13,7 @@ import br.com.myproject.repository.UserRepository;
 
 @DataJpaTest
 @RunWith(SpringRunner.class)
-public class UserRepositoryIntegrationTest {
+public class UserUnitTest {
 	
 	@Autowired
 	private UserRepository userRepository;

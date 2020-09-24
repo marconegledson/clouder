@@ -34,7 +34,7 @@ import br.com.myproject.repository.UserRepository;
 @ExtendWith(SpringExtension.class)
 @TestMethodOrder(OrderAnnotation.class)
 @TestPropertySource(locations = "classpath:application-integrationtest.properties")
-public class RegisterUseCaseIntegrationTest {
+public class UserUseCaseIntegrationTest {
 
 	@Autowired
 	private MockMvc mockMvc;
